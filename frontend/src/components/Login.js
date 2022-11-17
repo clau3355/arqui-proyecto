@@ -16,8 +16,13 @@ const Login = () => {
             <input type='password' name='search' className='form-control'></input>
             </div>
         </div>
-        <h1>olvidaste tu contraseña</h1>
-        <h1>registrarse</h1>
+        <div className='mt-3'>
+            <button className='btn btn-danger'>Olvide mi contraseña</button>
+        </div>
+        <div  className='mt-3'>
+            <button className='btn btn-primary'>Registrarse</button>
+        </div>
+        
         
       </div>
     );
