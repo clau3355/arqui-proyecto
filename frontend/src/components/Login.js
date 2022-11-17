@@ -18,9 +18,11 @@ const Login = () => {
             </div>
         </div>
 
+        <div className="mb-3 row">
         <h1>olvidaste tu contraseña</h1>
         <h1>registrarse</h1>
-        
+        </div>
+
       </div>
     );
   }
