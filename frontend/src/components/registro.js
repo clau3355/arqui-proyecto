@@ -39,7 +39,6 @@ const Registro = () => {
             </div>
         </div>
 
-    
         <div  className='mt-3'>
             <button className='btn btn-primary'>Registrarse</button>
         </div>
