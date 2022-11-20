@@ -1,0 +1,11 @@
+.main{
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.767)), url("../images/fondo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 94.8vh;
+    width: 94.8;
+}
+
+.welcome{
+    color:rgb(255, 255, 255);
+}
