@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 //import Login from './components/Login';
-import Registro from './components/Registro';
+//import Registro from './components/Registro';
+import Navbar from './components/Navbar';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Registro />
+    <Navbar />
   </React.StrictMode>
 );
 
