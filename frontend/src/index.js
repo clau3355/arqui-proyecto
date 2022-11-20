@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 //import Login from './components/Login';
 //import Registro from './components/Registro';
-import Navbar from './components/Navbar';
+import Inicio from './components/Inicio';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Navbar />
+    <Inicio />
   </React.StrictMode>
 );
 
