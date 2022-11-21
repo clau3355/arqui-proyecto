@@ -1,6 +1,7 @@
 import React from 'react';
-import '../style/main.css'
-
+import '../style/tienda.css'
+import Ph from '../images/Ph.jpg';
+import tienda from '../images/tienda.jpg';
 
 const Tiendas = () => {
     return (
@@ -32,19 +33,90 @@ const Tiendas = () => {
                 </div>
             </nav>
         </div>
+
+        <div  className="main">
+            <div className='p-3'>
+                <h1 className='welcome'>Bienvenido</h1>
+            </div>
+            
+            <div className='container p-4'>
+                <div className='col'>
+                    <div className='row'>
+                        <div className='card'>
+                            <div className="card-body">
+                                <h5 className="card-title">Bodega "Las palmeras"</h5>
+                                <div className='text-center'>
+                                    <img src={tienda} size= "small" alt='tienda.png' className='w-10'></img>
+                                </div>
+                                <p className="card-text">
+                                 
+                                <h3>Unicación : Av. los tulipanes A-18</h3>
+                                  
+                                    
+                                </p>
+                                <div className='text-center'>
+
+
+                                    <a href="/" className="btn btn-primary">Elegir Tienda</a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>         
+                </div>
+                </div>
+
+                <div className='container p-4'>
+                <div className='col'>
+                    <div className='row'>
+                        <div className='card'>
+                            <div className="card-body">
+                                <h5 className="card-title">Pizza Hut</h5>
+                                <div className='text-center'>
+                                    <img src={Ph} alt='Ph.png' className='w-10'></img>
+                                </div>
+                                <p className="card-text">
+                                  
+                                <h3>Ubicación : Av. los tulipanes A-18</h3>
+                                 
+                                    
+                                </p>
+                                <div className='text-center'>
+
+
+                                    <a href="/" className="btn btn-primary">Elegir Restaurante</a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>         
+                </div>
+                
+                
+            
+        
+
+        
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
+        
 
 
           );

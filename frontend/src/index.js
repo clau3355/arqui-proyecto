@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './style/index.css';
 //import Login from './components/Login';
 //import Registro from './components/Registro';
-import Inicio from './components/Inicio';
+
+//import Inicio from './components/Inicio';
+import Tiendas from './components/Tiendas';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Inicio />
+    <Tiendas />
   </React.StrictMode>
 );
 
