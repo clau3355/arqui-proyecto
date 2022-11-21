@@ -64,7 +64,7 @@ const Inicio = () => {
                     <div className='col'>
                         <div className='card'>
                                 <div className="card-body">
-                                    <h5 className="card-title">Pedidos</h5>
+                                    <h5 className="card-title">Pedido</h5>
                                     <p className="card-text">Vizualizar el estado de tu pedido:</p>
     
                                     <div  className='mt-3'>
