@@ -4,8 +4,8 @@ import './style/index.css';
 //import Login from './components/Login';
 //import Registro from './components/Registro';
 
-//import Inicio from './components/Inicio';
 import Tiendas from './components/Tiendas';
+//import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
