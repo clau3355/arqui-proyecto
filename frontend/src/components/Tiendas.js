@@ -39,6 +39,7 @@ const Tiendas = () => {
                 <h1 className='welcome'>Bienvenido</h1>
             </div>
             
+            
             <div className='container p-4'>
                 <div className='col'>
                     <div className='row'>
