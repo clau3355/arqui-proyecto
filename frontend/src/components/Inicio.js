@@ -42,13 +42,20 @@ const Inicio = () => {
                     <div className='col'>
                         <div className='card'>
                             <div className="card-body">
-                                <h5 className="card-title">Username</h5>
+                                <h5 className="card-title">Perfil</h5>
                                 <div className='text-center'>
                                     <img src={user} alt='user.png' className='w-50'></img>
                                 </div>
-                                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <p className="card-text">
+                                <h3>Datos : Lucas</h3>  
+                                <h3>Direccion : Av. los tulipanes A-18</h3>
+                                <h3>telefono : 984999965</h3>  
+                                    
+                                </p>
                                 <div className='text-center'>
-                                    <a href="/" className="btn btn-primary">Go somewhere</a>
+
+
+                                    <a href="/" className="btn btn-primary">Ver más información</a>
                                 </div>
                                 
                             </div>
@@ -58,7 +65,36 @@ const Inicio = () => {
                         <div className='card'>
                                 <div className="card-body">
                                     <h5 className="card-title">Pedidos</h5>
-                                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <p className="card-text">Vizualizar el estado de tu pedido:</p>
+    
+                                    <div  className='mt-3'>
+                                    <button className='btn btn-primary'>Estado</button>
+                                    <h1></h1>
+                                    <div className="col-sm-10">
+                                    <input type='text' name='search' className='form-control'></input>
+                                    </div>
+                                    </div>
+                                    <div  className='mt-3'>
+                                    <button className='btn btn-primary'>Mapa</button>
+                                    
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='col'>
+                        <div className='card'>
+                                <div className="card-body">
+                                    <h5 className="card-title">Contacto</h5>
+                                    <p className="card-text">Contactar al repartidor :</p>
+
+                                    <div  className='mt-3'>
+                                    <button className='btn btn-primary'>Chat</button>
+                                    <div  className='mt-3'>
+                                    <button className='btn btn-primary'>Videollamada</button>
+                                    </div>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
