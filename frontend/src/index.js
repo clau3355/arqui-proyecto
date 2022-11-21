@@ -4,14 +4,14 @@ import './style/index.css';
 //import Login from './components/Login';
 //import Registro from './components/Registro';
 
-import Tiendas from './components/Tiendas';
+import Pedido from './components/Pedido';
 //import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Tiendas />
+    <Pedido />
   </React.StrictMode>
 );
 
