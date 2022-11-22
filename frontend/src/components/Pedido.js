@@ -49,7 +49,7 @@ const Pedido = () => {
                                 <option value="4">Chocolate</option>
                             </select>
                             <div className='mb-2 mt-3 text-center'>
-                                <button className='btn btn-warning w-50 fw-bold'>Hacer pedido</button>
+                                <button className='btn btn-warning w-50 fw-bold'>Realizar pedido</button>
                             </div>
                         </form>
                     </div>
