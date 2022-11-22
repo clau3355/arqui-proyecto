@@ -19,10 +19,10 @@ const Tiendas = () => {
                                 <a className="nav-link active" aria-current="page" href="/">Inicio</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="/">Pedido</a>
+                                <a className="nav-link active" aria-current="page" href="/pedido">Pedido</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="/">Tiendas</a>
+                                <a className="nav-link active" aria-current="page" href="/tiendas">Tiendas</a>
                             </li>
                         </ul>
                         <form className="d-flex" role="search">
@@ -58,7 +58,7 @@ const Tiendas = () => {
                                 <div className='text-center'>
 
 
-                                    <a href="/" className="btn btn-primary">Elegir Tienda</a>
+                                    <a href="/pedido" className="btn btn-primary">Elegir Tienda</a>
                                 </div>
                                 
                             </div>

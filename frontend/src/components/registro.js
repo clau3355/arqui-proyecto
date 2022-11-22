@@ -3,8 +3,7 @@ import React from 'react';
 const Registro = () => {
     return (
       <div className="container mt-3">
-         <h1>Inicio</h1>
-        <h1>Login</h1>
+        <h1>Registro</h1>
           <div className="mb-3 row">
             <label for="staticEmail" className="col-sm-2 col-form-label">Nombre</label>
             <div className="col-sm-10">

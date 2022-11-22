@@ -18,10 +18,10 @@ const Inicio = () => {
                                 <a className="nav-link active" aria-current="page" href="/">Inicio</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="/">Pedido</a>
+                                <a className="nav-link active" aria-current="page" href="/pedido">Pedido</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="/">Tiendas</a>
+                                <a className="nav-link active" aria-current="page" href="/tiendas">Tiendas</a>
                             </li>
                         </ul>
                         <form className="d-flex" role="search">
