@@ -1,5 +1,5 @@
 import React from 'react';
-
+import usuario from '../images/usuario.png';
 
 const Main = () => {
     return (
@@ -8,6 +8,10 @@ const Main = () => {
           <div className="mb-3">
             <h3>Menu principal</h3>
             <div className='text-center mt-4'>
+            <div className='text-center'>
+                                    <img src={usuario} size= "small" width = "200 px" heigth= "200 px"  alt='usuario.png' className='w-5'></img>
+                                </div>
+
                 <a className='btn btn-warning w-50 fw-bold' href='/login'>Iniciar Sesion</a>
             </div>
           </div>
