@@ -104,7 +104,7 @@ const Tiendas = () => {
                     <div className='col'>
                         <div className='card'>
                             <div className="card-body">
-                                <h5 className="card-title">Pizza Hut</h5>
+                                <h5 className="card-title">Pardos Chicken</h5>
                                 <div className='text-center'>
                                     <img src={pardos} alt='pardos.png' width = "200 px" heigth= "200 px" className='w-10'></img>
                                 </div>
