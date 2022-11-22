@@ -48,6 +48,10 @@ const Pedido = () => {
                                 <option value="3">Arroz</option>
                                 <option value="4">Chocolate</option>
                             </select>
+                            <div className='mt-4'>
+                                <label>Cantidad: </label>
+                                <input type="number"  min="0" pattern="^[0-9]+" className="form-control" placeholder="Ingresa la cantidad"></input>
+                            </div>
                             <div className='mb-2 mt-3 text-center'>
                                 <button className='btn btn-warning w-50 fw-bold'>Realizar pedido</button>
                             </div>
