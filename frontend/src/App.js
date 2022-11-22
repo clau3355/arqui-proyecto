@@ -4,13 +4,15 @@ import Login from './components/Login';
 import Registro from './components/Registro';
 import Tiendas from './components/Tiendas';
 import Pedido from './components/Pedido';
+import Main from './components/Main';
 
 function App() {
   return (
     <div>
       <Router>
         <Routes>
-          <Route path='/' element ={<Inicio />}/>
+        <Route path='/' element ={<Main />}/>
+          <Route path='/inicio' element ={<Inicio />}/>
           <Route path='/login' element ={<Login />}/>
           <Route path='/registro' element ={<Registro />}/>
           <Route path='/tiendas' element ={<Tiendas />}/>

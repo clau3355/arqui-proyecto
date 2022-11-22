@@ -41,6 +41,10 @@ const Registro = () => {
         <div  className='mt-3'>
             <button className='btn btn-primary'>Registrarse</button>
         </div>
+
+        <div  className='mt-3'>
+            <a className='btn btn-danger' href='/login'>Cancelar</a>
+        </div>
         
 
       </div>
