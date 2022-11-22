@@ -53,7 +53,7 @@ const Pedido = () => {
                                 <input type="number"  min="0" pattern="^[0-9]+" className="form-control" placeholder="Ingresa la cantidad"></input>
                             </div>
                             <div className='mb-2 mt-3 text-center'>
-                                <button className='btn btn-warning w-50 fw-bold'>Realizar pedido</button>
+                                <a className='btn btn-warning w-50 fw-bold' href='/mapa'>Realizar pedido</a>
                             </div>
                         </form>
                     </div>

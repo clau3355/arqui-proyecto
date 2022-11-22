@@ -2,7 +2,7 @@ import React from 'react';
 import '../style/main.css'
 
 
-const final = () => {
+const Final = () => {
     return (
       <div>
         <div>
@@ -57,4 +57,4 @@ const final = () => {
         }
         
 
-        export default final;
+export default Final;

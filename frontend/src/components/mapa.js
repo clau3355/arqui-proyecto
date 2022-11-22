@@ -2,7 +2,7 @@ import React from 'react';
 import '../style/main.css'
 
 
-const mapa = () => {
+const Mapa = () => {
     return (
       <div>
         <div>
@@ -40,7 +40,7 @@ const mapa = () => {
           </div>
           <div className='mb-2'>
             <form action = "">
-            <button className='btn btn-primary'>Continuar</button>  
+            <a className='btn btn-primary' href='/final'>Continuar</a>  
               
               
               
@@ -85,4 +85,4 @@ const mapa = () => {
         }
         
 
-        export default mapa;
+export default Mapa;
