@@ -7,23 +7,17 @@ const Registro = () => {
           <div className="mb-3 row">
             <label for="staticEmail" className="col-sm-2 col-form-label">Nombre</label>
             <div className="col-sm-10">
-                <input type='text' name='search' className='form-control'></input>
+                <input type='text' name='username' className='form-control'></input>
             </div>
         </div>
 
         <div className="mb-3 row">
-            <label for="staticEmail" className="col-sm-2 col-form-label">Apellido</label>
+            <label for="staticEmail" className="col-sm-2 col-form-label">correo</label>
             <div className="col-sm-10">
-                <input type='text' name='search' className='form-control'></input>
+                <input type='text' name="email" className='form-control'></input>
             </div>
         </div>
-
-        <div className="mb-3 row">
-            <label for="staticEmail" className="col-sm-2 col-form-label">DNI</label>
-            <div className="col-sm-10">
-                <input type='text' name='search' className='form-control'></input>
-            </div>
-        </div>
+        
         <div className="mb-3 row">
             <label for="inputPassword" className="col-sm-2 col-form-label">Constraseña</label>
             <div className="col-sm-10">

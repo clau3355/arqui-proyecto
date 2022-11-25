@@ -9,20 +9,17 @@ const Login = () => {
             <h3>Iniciar Sesion</h3>
           </div>
           <div className='mb-2'>
-            <form action = "">
+            <form method="POST" action="/login">
               <div className='mb-2'>
                 <label className="form-label">Correo</label>
-                <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Ingresa tu correo"></input>
+                <input type="email" className="form-control"  name="correo" id="exampleFormControlInput1" placeholder="Ingresa tu correo"></input>
               </div>
               <div className='mb-2'>
                 <label className="form-label">Contraseña</label>
-                <input type="password" className="form-control" id="exampleFormControlInput1" placeholder="Ingresa tu contraseña"></input>
+                <input type="password" className="form-control" name="password" id="exampleFormControlInput1" placeholder="Ingresa tu contraseña"></input>
               </div>
               <div className='mb-2 mt-3 text-center'>
                 <a className='btn btn-warning w-50 fw-bold' href='/inicio'>Iniciar sesion</a>
-              </div>
-              <div className='mb-2 mt-3 text-center'>
-                <a href='/' className='link'>Olvide mi contraseña</a>
               </div>
             </form>
           </div>

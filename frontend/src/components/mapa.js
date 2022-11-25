@@ -37,49 +37,27 @@ const Mapa = () => {
         <div className='card col-sm-6 p-5' >
           <div className="mb-3">
             <h3>Calculo de ruta</h3>
+
+            <div class ="container-fluid">
+                    <div id="map">
+
+                    </div>
+
+                    <div id="output">
+
+                    </div>
+               </div>
+               
           </div>
           <div className='mb-2'>
             <form action = "">
             <a className='btn btn-primary' href='/final'>Continuar</a>  
-              
-              
-              
             </form>
           </div>
-          
-          
+        
         </div>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
           );
         }
