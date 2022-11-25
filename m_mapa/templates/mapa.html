@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mapa</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+
+</head>
+<body>
+     <div class = "container">        
+          <div>
+               <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label" id="Origen_Tienda" hidden="hidden"> {{ variable1 }} </label>
+               </div>
+               <div class="mb-3">
+                    <label for="exampleFormControlInput2" class="form-label" id="Destino_Ubicacion" hidden="hidden">  {{ variable2 }} </label>
+               </div>
+
+               <div class ="container-fluid">
+                    <div id="map">
+
+                    </div>
+
+                    <div id="output">
+
+                    </div>
+               </div>
+          </div>
+     </div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXo-OEh8h8LtwbjdK5FVTkIEQi6q5Cass&libraries=places"></script>
+<script src="{{url_for('static', filename='map.js')}}"></script>
+</body>
+
+</html>
