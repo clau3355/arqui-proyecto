@@ -1,17 +1,11 @@
-from flask import render_template, Flask
+from flask import render_template, Flask, request
 import os
 app = Flask(__name__, static_url_path='')
 
-
-
-@app.route('/')
+@app.route('/map')
 def map():
-     print('Ubicacion1:')
-     var1 = input()
-
-
-     print('Ubicacion2:')
-     var2 = input()
+     var1 = request.args.get('origin')
+     var2 = request.args.get('destination')
 
      return render_template('mapa.html', variable1 = var1, variable2 =var2 )
 
