@@ -4,25 +4,11 @@ import json
 from flask import Flask, request, render_template
 from google.cloud import bigquery
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "fastdeliveryproject-e62677747c15.json"
+# os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "fastdeliveryproject-e62677747c15.json"
 
 client = bigquery.Client()
 
 app = Flask(__name__)
-
-# class Pedido:
-#     def __init__(self,id_pedido,id_cliente,nombre_cliente,monto,direccion,telefono,fecha,hora):
-#         self.id_pedido = id_pedido
-#         self.id_cliente = id_cliente
-#         self.nombre_cliente = nombre_cliente
-#         self.monto = monto
-#         self.direccion = direccion
-#         self.telefono = telefono
-#         self.fecha = fecha
-#         self.hora = hora
-
-#     def __repr__(self):
-#         return f'<Pedido: {self.id_pedido}>'
 
 
 def ObtenerPedidos():
@@ -43,4 +29,4 @@ def my_map():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('port', 8080)))
