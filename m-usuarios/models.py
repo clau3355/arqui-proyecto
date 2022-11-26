@@ -1,6 +1,7 @@
 import os
 from google.cloud import bigquery
 from datetime import date
+from kms import encriptar, desencriptar
 
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'fastdeliveryproject-e62677747c15.json'
@@ -62,16 +63,18 @@ def AñadirUser(a,b,c):
     table = client.get_table(table_ref)
     # Creating a list of tuples with the values that shall be inserted into the table
     id = GetLastId()
-    rows_to_insert = [(id,b,"100",None,fecha,a,c,None)]
+    contra = encriptar(b)
+    rows_to_insert = [(id,contra,"100",None,fecha,a,c,None)]
     errors = client.insert_rows(table, rows_to_insert) 
     print(errors)
 
 def ValidarUsername(a,b):
     users = ObtenerUsuarios()
     for i in users:
+        contra = desencriptar(i.password)
         if i.username == a:
             print("se encontró el usuario")
-            if i.password == b:
+            if contra == b:
                 print("la contraseña es correcta")
                 return i.id_user
 
