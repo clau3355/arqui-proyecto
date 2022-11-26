@@ -27,6 +27,5 @@ def my_map():
     json_string = json.dumps(pedidos)
     return json_string
 
-
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('port', 8080)))
