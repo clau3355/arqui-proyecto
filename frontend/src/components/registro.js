@@ -17,11 +17,11 @@ const Registro = () => {
                 <input type='text' name="email" className='form-control'></input>
             </div>
         </div>
-        
+
         <div className="mb-3 row">
             <label for="inputPassword" className="col-sm-2 col-form-label">Constraseña</label>
             <div className="col-sm-10">
-            <input type='password' name='search' className='form-control'></input>
+            <input type='password' name='password' className='form-control'></input>
             </div>
         </div>
 

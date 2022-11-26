@@ -32,8 +32,8 @@ def ObtenerPedidos():
 
     for row in query_job.result():
         pedidos.append({"id_pedido": row["id_pedido"], "id_cliente": row["id_cliente"], "nombre_cliente": row["nombre_cliente"], "monto":row["monto"], "direccion": row["direccion"], "telefono":row["telefono"], "fecha":row["fecha"], "hora":row["hora"]})
+    print (pedidos)
     return pedidos
-
 
 @app.route('/')
 def my_map():
@@ -44,3 +44,5 @@ def my_map():
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+
+ObtenerPedidos()
