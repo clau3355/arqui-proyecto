@@ -56,7 +56,7 @@ def seleccionar_respuesta(mensaje, ls_mensajes):
         probabilidad_max[respuesta] = probabilidad(
             ls_mensajes, list_of_words, single_response, required_words)
 
-    response('Hola, Alexa, su asistente virtual, en que puedo ayudarlo?', [
+    response('Hola, soy Alexa, su asistente virtual de soporte, en que puedo ayudarlo?', [
              'hola', 'saludos', 'buenas'], single_response=True)
     response('Conqué necesita ayuda?', [
              'soporte', 'necesito', 'ayuda', 'sientes'], single_response=True)
