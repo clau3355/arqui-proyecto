@@ -14,13 +14,9 @@ def before_request():
 @app.route('/login')
 def login_post():
     session.pop('id_user',None)
-    print("ingresa tu correo")
-    email = input()
-    print("ingresa tu nombre")
-    name = input()
-    print("ingresa tu contraseña")
-    password = input()
-
+    email = request.args.get('email')
+    name = request.args.get('name')
+    password = request.args.get('password')
     resultado = ValidarUsername(name,password)
     #print(resultado)
 
@@ -32,12 +28,10 @@ def login_post():
 
 @app.route('/signup')
 def signup_post():
-    print("ingresa tu correo")
-    email = input()
-    print("ingresa tu nombre")
-    name = input()
-    print("ingresa tu contraseña")
-    password = input()
+    email = request.args.get('email')
+    name = request.args.get('name')
+    password = request.args.get('password')
+
     resultado = BuscarUsuarioxCorreo(email)
     
     if resultado!=True:
@@ -58,6 +52,6 @@ app.config['SESSION_TYPE'] = 'filesystem'
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('port', 8080)))
 
 
