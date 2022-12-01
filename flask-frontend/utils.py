@@ -7,16 +7,16 @@ def send_chat_bot(texto):
     print(respuesta.text)
     return respuesta.text
     
-def get_map(ubicacion_x, ubicacion_y):
-    url_m_mapa = "https://mapas-modulo-2hgv6awwjq-uc.a.run.app"
-    params = {"origin":ubicacion_x,"destination":ubicacion_y}
-    respuesta = requests.get(url=url_m_mapa, params=params)
-    print(respuesta.text)
-    return respuesta.text
+# def get_map(ubicacion_x, ubicacion_y):
+#     url_m_mapa = "https://mapas-modulo-2hgv6awwjq-uc.a.run.app"
+#     params = {"origin":ubicacion_x,"destination":ubicacion_y}
+#     respuesta = requests.get(url=url_m_mapa, params=params)
+#     print(respuesta.text)
+#     return respuesta.text
 
-def get_map(ubicacion_x, ubicacion_y):
-    url_m_mapa = "https://mapas-modulo-2hgv6awwjq-uc.a.run.app"
-    params = {"origin":ubicacion_x,"destination":ubicacion_y}
+def get_pedidos():
+    url_m_mapa = "https://lista-pedidos-2hgv6awwjq-uc.a.run.app"
+    params = {}
     respuesta = requests.get(url=url_m_mapa, params=params)
     print(respuesta.text)
     return respuesta.text
