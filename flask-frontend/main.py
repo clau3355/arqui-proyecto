@@ -4,7 +4,28 @@ app = Flask(__name__)
 
 @app.route('/')
 def map():
-     return render_template('index.html')
-     
+     var1 = "Lucas"
+     var2 = "984999965"
+     var3 = "Av. los tulipanes A-18"
+
+     return render_template('index.html', variable1 = var1, variable2 =var2, variable3 = var3 )
+
+@app.route('/login')
+def login():
+     return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+     return "logout"
+
+@app.route('/tiendas')
+def tiendas():
+     return render_template('tiendas.html')
+
+@app.route('/pedido')
+def pedido():
+     return render_template('pedido.html')
+
+
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('port', 8080)))
