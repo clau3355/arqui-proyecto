@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div  class="main">
+     <div class="p-3">
+         <h1 class="welcome">Bienvenido</h1>
+ </div>
+     
+     
+     <div class="container p-4">
+         <div class="row">
+             <div class="col">
+                 <div class="card">
+                     <div class="card-body">
+                         <h5 class="card-title">Bodega "Las palmeras"</h5>
+                         <div class="text-center">
+                             <img src="{{url_for('static', filename='tienda.jpg')}}" size= "small" width = "200 px" heigth= "200 px" alt="tienda.png" class="w-10">
+                         </div>
+                         <p class="card-text">
+                          
+                         <h3>Unicación : Av. los tulipanes A-18</h3>
+                         
+                         </p>
+                         <div class="text-center">
+                             <a href="/pedido" class="btn btn-primary">Elegir Tienda</a>
+                         </div>
+                         
+                     </div>
+                 </div>
+             </div>
+             
+         </div> 
+
+         <h1>
+
+         </h1>
+
+     
+         <div class="row">
+             <div class="col">
+                 <div class="card">
+                     <div class="card-body">
+                         <h5 class="card-title">Pizza Hut</h5>
+                         <div class="text-center">
+                             <img src="{{url_for('static', filename='PH.jpg')}}" alt="Ph.png" width = "200 px" heigth= "200 px" class="w-10">
+                         </div>
+                         <p class="card-text">
+                           
+                         <h3>Ubicación : Av. los tulipanes A-18</h3>
+                          
+                             
+                         </p>
+                         <div class="text-center">
+
+
+                             <a href="/" class="btn btn-primary">Elegir Restaurante</a>
+                         </div>
+                         
+                     </div>
+                 </div>
+             </div>
+             
+         </div> 
+
+         <h1>
+
+         </h1>
+
+         <div class="row">
+             <div class="col">
+                 <div class="card">
+                     <div class="card-body">
+                         <h5 class="card-title">Pardos Chicken</h5>
+                         <div class="text-center">
+                             <img src="{{url_for('static', filename='pardos.jpg')}}" alt="pardos.png" width = "200 px" heigth= "200 px" class="w-10">
+                         </div>
+                         <p class="card-text">
+                           
+                         <h3>Ubicación : Av. los tulipanes A-18</h3>
+                          
+                             
+                         </p>
+                         <div class="text-center">
+
+
+                             <a href="/" class="btn btn-primary">Elegir Restaurante</a>
+                         </div>
+                         
+                     </div>
+                 </div>
+             </div>
+         </div>          
+         </div>
+         </div>
+ </div>
+ 
+ {% endblock %}

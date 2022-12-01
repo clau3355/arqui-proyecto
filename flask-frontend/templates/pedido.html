@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+     <div class="d-flex mt-3 justify-content-center p-5">
+         <div class="card col-sm-6 p-5" >
+             <div class="mb-3">
+                 <h3>Bodega "Las palmeras"</h3>
+             </div>
+             <div class="mb-2">
+                 <form action = "">
+                     <select class="form-select" aria-label="Default select example">
+                         <option selected>Productos disponibles</option>
+                         <option value="1">Leche</option>
+                         <option value="2">Galletas</option>
+                         <option value="3">Arroz</option>
+                         <option value="4">Chocolate</option>
+                     </select>
+                     <div class="mt-4">
+                         <label>Cantidad: </label>
+                         <input type="number"  min="0" pattern="^[0-9]+" class="form-control" placeholder="Ingresa la cantidad"></input>
+                     </div>
+                     <div class="mb-2 mt-3 text-center">
+                         <a class="btn btn-warning w-50 fw-bold" href="/mapa">Realizar pedido</a>
+                     </div>
+                 </form>
+             </div>
+         </div>
+     </div>
+ </div>
+
+{% endblock %}
+

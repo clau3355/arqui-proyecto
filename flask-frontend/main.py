@@ -26,6 +26,16 @@ def tiendas():
 def pedido():
      return render_template('pedido.html')
 
+@app.route('/registro')
+def registro():
+     return render_template('registro.html')
+
+@app.route('/mapas')
+def mapas():
+     var1 = "Lima"
+     var2 = "Callao"
+
+     return render_template('mapas.html', variable1 = var1, variable2 =var2 )
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('port', 8080)))
