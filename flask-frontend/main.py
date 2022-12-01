@@ -8,7 +8,7 @@ def main():
      return render_template('main.html')
 
 @app.route('/index')
-def map():
+def index():
      var1 = "Lucas"
      var2 = "984999965"
      var3 = "Av. los tulipanes A-18"
