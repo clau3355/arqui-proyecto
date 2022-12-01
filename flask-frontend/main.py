@@ -2,7 +2,12 @@ from flask import render_template, Flask, request
 import os
 app = Flask(__name__)
 
+
 @app.route('/')
+def main():
+     return render_template('main.html')
+
+@app.route('/index')
 def map():
      var1 = "Lucas"
      var2 = "984999965"
