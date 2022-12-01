@@ -1,5 +1,6 @@
 import requests
 
+
 def send_chat_bot(texto):
     url_m_bot = "https://chat-bot-2hgv6awwjq-uc.a.run.app"
     params = {"texto":texto}
@@ -15,7 +16,7 @@ def send_chat_bot(texto):
 #     return respuesta.text
 
 def get_pedidos():
-    url_m_mapa = "https://lista-pedidos-2hgv6awwjq-uc.a.run.app"
+    url_m_mapa = "https://lista-pedidos-2hgv6awwjq-uc.a.run.app/get"
     params = {}
     respuesta = requests.get(url=url_m_mapa, params=params)
     print(respuesta.text)

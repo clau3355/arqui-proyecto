@@ -21,11 +21,25 @@ def ObtenerPedidos():
     print (pedidos)
     return pedidos
 
-@app.route('/')
+@app.route('/get')
 def my_map():
     pedidos = ObtenerPedidos()
     json_string = json.dumps(pedidos)
     return json_string
+
+@app.route('/crear_pedido')
+def my_map():
+    bq_client = bigquery.Client()
+    bq_client.insert_rows("fastdeliveryproject.Datos_no_relacionales.tabla_pedido",[{"id_pedido": request.args.get('id_pedido'), 
+                                                                                     "id_cliente": request.args.get('id_cliente'), 
+                                                                                     "nombre_cliente": request.args.get('nombre_cliente'),
+                                                                                     "monto":request.args.get('monto'), 
+                                                                                     "direccion": request.args.get('direccion'), 
+                                                                                     "telefono":request.args.get('telefono'), 
+                                                                                     "fecha":request.args.get('fecha'), 
+                                                                                     "hora":request.args.get('hora')}])
+    return "subido"
+
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('port', 8080)))
