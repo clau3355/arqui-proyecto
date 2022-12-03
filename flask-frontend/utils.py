@@ -22,7 +22,7 @@ def get_pedidos():
     print(respuesta.text)
     return respuesta.text
 
-def login(mail,psw):
+def iniciar_sesion(mail,psw):
     url_login = "https://m-usuarios-eop4xwh6ma-uc.a.run.app/login"
     params = {"email":mail,"password":psw}
     respuesta = requests.get(url=url_login, params=params)

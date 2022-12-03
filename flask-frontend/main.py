@@ -1,7 +1,7 @@
 from flask import render_template, Flask, request, redirect, url_for,session, g, flash
 import os
 import time
-from utils import signup, login
+from utils import signup, iniciar_sesion
 import json
 from types import SimpleNamespace
 
@@ -29,7 +29,7 @@ def index():
      return render_template('index.html', variable1 = var1, variable3 = var3 )
 
 @app.route('/login')
-def login_page():
+def login():
     return render_template('login.html')
 
 @app.route('/login', methods=["POST"])
@@ -37,7 +37,7 @@ def login_post():
      session.pop('id_user',None)
      email = request.form.get('correo')
      password = request.form.get('password')
-     respuesta = login(email,password)
+     respuesta = iniciar_sesion(email,password)
      tipo = type(respuesta) 
      try:
           x = json.loads(respuesta)
@@ -46,7 +46,7 @@ def login_post():
                return redirect(url_for('index'))
      except:
           flash('Error en inicio de sesión')
-          return redirect(url_for('login_page'))
+          return redirect(url_for('login'))
 
 @app.route('/logout')
 def logout():
