@@ -24,11 +24,6 @@
              <input type="password" class="form-control" name="password" id="exampleFormControlInput1" placeholder="Ingresa tu contraseña"></input>
            </div>
 
-           <div class="mb-2">
-               <label class="form-label">Repetir contraseña</label>
-               <input type="password" class="form-control" name="password2" id="exampleFormControlInput1" placeholder="Ingresa tu contraseña"></input>
-            </div>
-
             <div class="mb-2">
               <label class="form-label">Ubicación</label>
               <input type="text" class="form-control"  name="ubicacion" id="destino" placeholder="Ingresa tu ubicacion"></input>
@@ -39,11 +34,20 @@
            </div>
 
            <div class="mb-2 mt-3 text-center">
-               <a class="btn btn-danger w-50 fw-bold" href="{{ url_for('login') }}">Cancelar</a>
+               <a class="btn btn-danger w-50 fw-bold" href="{{ url_for('login_page') }}">Cancelar</a>
              </div>
          </form>
 
-          <div id="mensaje"> {{respuesta}} </div>
+         
+     <div class="mt-4"> 
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p>{{ message }}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      </div>
 
        </div>     
    </div>

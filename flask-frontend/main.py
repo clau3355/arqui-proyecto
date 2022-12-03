@@ -1,6 +1,10 @@
-from flask import render_template, Flask, request, redirect, url_for,session, g
+from flask import render_template, Flask, request, redirect, url_for,session, g, flash
 import os
-from utils import signup
+import time
+from utils import signup, login
+import json
+from types import SimpleNamespace
+
 app = Flask(__name__)
 
 
@@ -12,39 +16,37 @@ def main():
 def before_request():
     g.user = None 
     if 'id_user' in session:
-        user = "hola"
-        g.user = user
+        g.user = session['id_user']
 
 @app.route('/index')
 def index():
      if not g.user:
         return redirect("login")
         
-     var1 = "Lucas"
-     var2 = "984999965"
-     var3 = "Av. los tulipanes A-18"
+     var1 = g.user['username']
+     var3 = g.user['ubicacion']
 
-     return render_template('index.html', variable1 = var1, variable2 =var2, variable3 = var3 )
+     return render_template('index.html', variable1 = var1, variable3 = var3 )
 
 @app.route('/login')
 def login_post():
-    session.pop('id_user',None)
-    email = request.form.get('email')
-    name = request.form.get('username')
-    password = request.form.get('password')
-
-    resultado = True
-    #print(resultado)
-
-    if resultado!= False:
-        session['id_user'] = resultado
-        return redirect("index")
-    else:
-        return redirect("login")
+    return render_template('login.html')
 
 @app.route('/login', methods=["POST"])
-def login():
-     return render_template('login.html')
+def login_page():
+     session.pop('id_user',None)
+     email = request.form.get('correo')
+     password = request.form.get('password')
+     respuesta = login(email,password)
+     tipo = type(respuesta) 
+     try:
+          x = json.loads(respuesta)
+          if(x!=None):
+               session['id_user'] = x
+               return redirect(url_for('index'))
+     except:
+          flash('Error en inicio de sesión')
+          return redirect(url_for('login_page'))
 
 @app.route('/logout')
 def logout():
@@ -56,12 +58,14 @@ def logout():
 def tiendas():
      if not g.user:
         return redirect("login")
+
      return render_template('tiendas.html')
 
 @app.route('/pedido')
 def pedido():
      if not g.user:
         return redirect("login")
+
      return render_template('pedido.html')
 
 @app.route('/registro')
@@ -74,15 +78,17 @@ def registro_post():
      name = request.form.get('name')
      password = request.form.get('password')
      ubicacion = request.form.get('ubicacion')
-     signup(name,email,password,ubicacion)
-     return redirect('/login')
+     respuesta = signup(name,email,password,ubicacion)
+     flash(respuesta)
+     return render_template('registro.html')
+
 
 @app.route('/mapas')
 def mapas():
      if not g.user:
         return redirect("login")
-     var1 = "Lima"
-     var2 = "Callao"
+     var1 = "Callao"
+     var2 = g.user['ubicacion']
 
      return render_template('mapas.html', variable1 = var1, variable2 =var2 )
 

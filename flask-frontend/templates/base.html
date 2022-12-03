@@ -15,7 +15,7 @@
           <section class="hero is-primary is-fullheight">
           <nav class="navbar navbar-expand-lg bg-light">
               <div class="container-fluid">
-                  <a class="navbar-brand fw-bold" href="/">Fast Delivery</a>
+                  <a class="navbar-brand fw-bold" href="{{ url_for('index') }}">Fast Delivery</a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                   </button>
@@ -36,7 +36,11 @@
                           <button class="btn btn-outline-success" type="submit">Buscar</button>
                       </form>
 
-                      <a id="c-sesion" href="{{ url_for('logout') }}" class="nav-link active" aria-current="page"> Cerrar Sesión </a>
+                      {% if session['id_user'] %}
+                        <a id="c-sesion" href="{{ url_for('logout') }}" class="nav-link active" aria-current="page"> Cerrar Sesión </a>
+                      {% else %}
+                      {% endif %}
+
 
                   </div>
               </div>
