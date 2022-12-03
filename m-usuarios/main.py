@@ -14,11 +14,11 @@ def cambiar_ubicacion():
 @app.route('/login')
 def login_post():
     email = request.args.get('email')
-    name = request.args.get('name')
+    #name = request.args.get('name')
     password = request.args.get('password')
-    resultado = ValidarUsername(name,password)
+    resultado = ValidarUsername(email,password)
     if resultado!= False:
-        json_string = json.dumps(ValidarUsername(name,password))
+        json_string = json.dumps(ValidarUsername(email,password))
         return json_string
     else:
         return 'No se encontró el usuario'

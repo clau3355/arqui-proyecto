@@ -14,7 +14,7 @@ app = Flask(__name__)
 def ObtenerPedidos():
     pedidos = []
     query_job = client.query(
-        'select * from fastdeliveryproject.Datos_no_relacionales.tabla_pedido')
+        'select * from fastappdeliveryproject.Datos_no_relacionales.tabla_pedido')
 
     for row in query_job.result():
         pedidos.append({"id_pedido": row["id_pedido"], "id_cliente": row["id_cliente"], "nombre_cliente": row["nombre_cliente"], "monto":row["monto"], "direccion": row["direccion"], "telefono":row["telefono"], "fecha":row["fecha"], "hora":row["hora"]})
@@ -30,7 +30,7 @@ def my_map():
 @app.route('/crear_pedido')
 def my_map():
     bq_client = bigquery.Client()
-    bq_client.insert_rows("fastdeliveryproject.Datos_no_relacionales.tabla_pedido",[{"id_pedido": request.args.get('id_pedido'), 
+    bq_client.insert_rows("fastappdeliveryproject.Datos_no_relacionales.tabla_pedido",[{"id_pedido": request.args.get('id_pedido'), 
                                                                                      "id_cliente": request.args.get('id_cliente'), 
                                                                                      "nombre_cliente": request.args.get('nombre_cliente'),
                                                                                      "monto":request.args.get('monto'), 

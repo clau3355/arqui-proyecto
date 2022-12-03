@@ -1,10 +1,10 @@
 import os
 from google.cloud import bigquery
 from datetime import date
-from kms import encriptar, desencriptar
+#from kms import encriptar, desencriptar
 
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'fastdeliveryproject-e62677747c15.json'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'fastappdeliveryproject-4a512d20426a.json'
 
 client = bigquery.Client()
 
@@ -23,7 +23,7 @@ class User:
 
 def ObtenerUsuarios():
     users = []
-    query_job = client.query('select * from fastdeliveryproject.Datos_no_relacionales.tabla_test')
+    query_job = client.query('select * from fastappdeliveryproject.Datos_no_relacionales.tabla_test')
 
     for row in query_job.result():
         users.append(User(username=row["username"], ubicacion=row["ubicacion"], money=row["money"], password=row["pass"],id_user=row["id_user"], mail=row["correo"], id_sala=row["id_sala"]))
@@ -32,7 +32,7 @@ def ObtenerUsuarios():
 def CambiarUbicacion(a,b):
     user = BuscarUsuarioxId(a)
     user.ubicacion = b
-    query_job = client.query('UPDATE fastdeliveryproject.Datos_no_relacionales.tabla_test SET ubicacion="{}" WHERE id_user ="{}"'.format(b,a))
+    query_job = client.query('UPDATE fastappdeliveryproject.Datos_no_relacionales.tabla_test SET ubicacion="{}" WHERE id_user ="{}"'.format(b,a))
 
 def BuscarUsuarioxCorreo(a):
     users = ObtenerUsuarios()
@@ -64,8 +64,8 @@ def AñadirUser(a,b,c,ubi):
     table = client.get_table(table_ref)
     # Creating a list of tuples with the values that shall be inserted into the table
     id = GetLastId()
-    contra = encriptar(b)
-    rows_to_insert = [(id,contra,"100",ubi,fecha,a,c,None)]
+    #contra = encriptar(b)
+    rows_to_insert = [(id,b,"100",ubi,fecha,a,c,None)]
     errors = client.insert_rows(table, rows_to_insert) 
     print(errors)
 
@@ -79,7 +79,7 @@ def ValidarUsername(a,b):
     for i in users:
         contra = i.password
         #contra2 = desencriptar(contra)
-        if i.username == a:
+        if i.mail == a:
             print("se encontró el usuario")
             if contra == b:
                 print("la contraseña es correcta")
