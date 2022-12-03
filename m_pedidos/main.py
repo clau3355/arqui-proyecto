@@ -3,8 +3,10 @@ import json
 
 from flask import Flask, request, render_template
 from google.cloud import bigquery
+from datetime import date
 
-# os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "fastdeliveryproject-e62677747c15.json"
+
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = 'fastappdeliveryproject-4a512d20426a.json'
 
 client = bigquery.Client()
 
@@ -22,21 +24,29 @@ def ObtenerPedidos():
     return pedidos
 
 @app.route('/get')
-def my_map():
+def getpedidos():
     pedidos = ObtenerPedidos()
     json_string = json.dumps(pedidos)
     return json_string
 
+def GetLastId():
+    users = ObtenerPedidos()
+    resultado = len(users) + 1
+    return resultado
+
 @app.route('/crear_pedido')
-def my_map():
+def crearpedidos():
     bq_client = bigquery.Client()
-    bq_client.insert_rows("fastappdeliveryproject.Datos_no_relacionales.tabla_pedido",[{"id_pedido": request.args.get('id_pedido'), 
+    table_ref = client.dataset('Datos_no_relacionales').table('tabla_pedido')
+    table = client.get_table(table_ref)
+    id = GetLastId()
+    bq_client.insert_rows(table,[{"id_pedido": id, 
                                                                                      "id_cliente": request.args.get('id_cliente'), 
                                                                                      "nombre_cliente": request.args.get('nombre_cliente'),
                                                                                      "monto":request.args.get('monto'), 
                                                                                      "direccion": request.args.get('direccion'), 
                                                                                      "telefono":request.args.get('telefono'), 
-                                                                                     "fecha":request.args.get('fecha'), 
+                                                                                     "fecha": request.args.get('fecha'), 
                                                                                      "hora":request.args.get('hora')}])
     return "subido"
 
