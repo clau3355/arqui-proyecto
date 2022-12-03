@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 
 def get_pedido_user(usuario_id):
-    pedidos = requests.get('https://lista-pedidos-2hgv6awwjq-uc.a.run.app/')
+    pedidos = requests.get('https://mpedidos-eop4xwh6ma-uc.a.run.app/get')
     pedidos = json.loads(pedidos.text)
     for row in pedidos:
         print(row)
