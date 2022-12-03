@@ -5,7 +5,7 @@ from utils import signup, iniciar_sesion
 import json
 from types import SimpleNamespace
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 
 @app.route('/')
@@ -30,7 +30,7 @@ def index():
 
 @app.route('/login')
 def login():
-    return render_template('login.html')
+    return render_template('sesion.html')
 
 @app.route('/login', methods=["POST"])
 def login_post():
