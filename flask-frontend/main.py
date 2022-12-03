@@ -29,11 +29,11 @@ def index():
      return render_template('index.html', variable1 = var1, variable3 = var3 )
 
 @app.route('/login')
-def login_post():
+def login_page():
     return render_template('login.html')
 
 @app.route('/login', methods=["POST"])
-def login_page():
+def login_post():
      session.pop('id_user',None)
      email = request.form.get('correo')
      password = request.form.get('password')
