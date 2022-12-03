@@ -11,13 +11,13 @@
        <div class="mb-2">
          <form method="POST" action="/registro">
           <div class="mb-2">
-               <label class="form-label">Nombre</label>
-               <input type="text" class="form-control"  name="username" id="exampleFormControlInput1" placeholder="Ingresa tu nombre de usuario"></input>
+               <label class="form-label">Nombre de usuario</label>
+               <input type="text" class="form-control"  name="name" id="exampleFormControlInput1" placeholder="Ingresa tu nombre de usuario"></input>
              </div>
 
            <div class="mb-2">
              <label class="form-label">Correo</label>
-             <input type="email" class="form-control"  name="correo" id="exampleFormControlInput1" placeholder="Ingresa tu correo"></input>
+             <input type="email" class="form-control"  name="email" id="exampleFormControlInput1" placeholder="Ingresa tu correo"></input>
            </div>
            <div class="mb-2">
              <label class="form-label">Contraseña</label>
@@ -26,17 +26,24 @@
 
            <div class="mb-2">
                <label class="form-label">Repetir contraseña</label>
-               <input type="password" class="form-control" name="password" id="exampleFormControlInput1" placeholder="Ingresa tu contraseña"></input>
-             </div>
+               <input type="password" class="form-control" name="password2" id="exampleFormControlInput1" placeholder="Ingresa tu contraseña"></input>
+            </div>
+
+            <div class="mb-2">
+              <label class="form-label">Ubicación</label>
+              <input type="text" class="form-control"  name="ubicacion" id="destino" placeholder="Ingresa tu ubicacion"></input>
+            </div>
 
            <div class="mb-2 mt-3 text-center">
-             <a class="btn btn-warning w-50 fw-bold" href="/">Registrarse</a>
+             <button class="btn btn-warning w-50 fw-bold"> Registrarse </button>
            </div>
 
            <div class="mb-2 mt-3 text-center">
                <a class="btn btn-danger w-50 fw-bold" href="{{ url_for('login') }}">Cancelar</a>
              </div>
          </form>
+
+          <div id="mensaje"> {{respuesta}} </div>
 
        </div>     
    </div>

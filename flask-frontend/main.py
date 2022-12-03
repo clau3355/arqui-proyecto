@@ -1,8 +1,8 @@
 from flask import render_template, Flask, request, redirect, url_for,session, g
 import os
+from utils import signup
 app = Flask(__name__)
 
-usuario = []
 
 @app.route('/')
 def main():
@@ -12,7 +12,7 @@ def main():
 def before_request():
     g.user = None 
     if 'id_user' in session:
-        user = usuario #BuscarUsuarioxId(session['id_user'])
+        user = "hola"
         g.user = user
 
 @app.route('/index')
@@ -68,6 +68,15 @@ def pedido():
 def registro():
      return render_template('registro.html')
 
+@app.route('/registro', methods=["POST"])
+def registro_post():
+     email = request.form.get('email')
+     name = request.form.get('name')
+     password = request.form.get('password')
+     ubicacion = request.form.get('ubicacion')
+     signup(name,email,password,ubicacion)
+     return redirect('/login')
+
 @app.route('/mapas')
 def mapas():
      if not g.user:
@@ -76,6 +85,9 @@ def mapas():
      var2 = "Callao"
 
      return render_template('mapas.html', variable1 = var1, variable2 =var2 )
+
+app.config['SECRET_KEY'] = 'secret-key-goes-here'
+app.config['SESSION_TYPE'] = 'filesystem'
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('port', 8080)))

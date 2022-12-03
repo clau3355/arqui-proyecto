@@ -21,3 +21,26 @@ def get_pedidos():
     respuesta = requests.get(url=url_m_mapa, params=params)
     print(respuesta.text)
     return respuesta.text
+
+def login(mail,psw):
+    url_login = "https://m-usuarios-eop4xwh6ma-uc.a.run.app/login"
+    params = {"email":mail,"password":psw}
+    respuesta = requests.get(url=url_login, params=params)
+    print(respuesta.text)
+    return respuesta.text
+
+def signup(user,mail,psw,ubi):
+    url_signup = "https://m-usuarios-eop4xwh6ma-uc.a.run.app/signup"
+    params = {"email":mail,"password":psw, "name": user, "ubi":ubi}
+    respuesta = requests.get(url=url_signup, params=params)
+    print(respuesta.text)
+    return respuesta.text
+
+def locacion(id,ubicacion):
+    url_locacion = "https://m-usuarios-eop4xwh6ma-uc.a.run.app/ubicacion"
+    params = {"id":id,"ubi":ubicacion}
+    respuesta = requests.get(url=url_locacion, params=params)
+    print(respuesta.text)
+    return respuesta.text
+
+
