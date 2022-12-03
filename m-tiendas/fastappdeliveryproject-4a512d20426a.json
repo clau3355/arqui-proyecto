@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "fastappdeliveryproject",
+  "private_key_id": "4a512d20426a60a64458b8a736d9820700b7c1b5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCzaPcSA8BXyjiE\nJhUvTOVUdC8/DtGV4WgBb6dpJ/IxN9qcEGJSkzF26KOZ1KBJ6Bz3zDfAUe4K5i6U\nFT7rCHvFym1zRlfwfwJlGXekSngMFnWke6yDlHY/s7V+gIsB7PpkSn9aFL0+6BAz\nQlZsc8jn2wdX2XGozw3M54Z0VpT2XJzxI5fdsRQwxEsgFvbegS53CF6YCQejM2Pr\niVDyAFQmSvmYsZeSEtkNl3VZ110Zoimm7g8hdwr0R2npyL03iTKEFIRho03VSX5+\npXc9IEoBA0hHrhfPbjKSvZP4aegSR1g3JQk/V9mglyYez5q3B5C9VeLJlt72bsyt\nziPk429bAgMBAAECggEAPzgmE9GBlg3ak2pt/aBtkTBts50vqk5m3VawWcQrOj+x\nx1uYoftfK0T33U2I+/IQPxtVq+3S4UFSOXkxFhYDs2NM5RltBIBk4iYyvBBHtA63\n/rFbzXPjpTfYpQ57rT6JzwxXSvFS7FdO2hkupgG40kailEi5nd/0P3d4MAeQby0F\nURYbx6P3Nfa+/cllCLGy05OTbKmgXxEbHbrAn0VYnxyEadonhYdv0S3eeTvf4+kf\nqzLcG97F4ERd6Hd3PWR0vHtqrXty8v/CG1zGzoAJwFKZThse60h/I1P+SWPnLSin\ny6kiyJAGKul9bkZorru8s5KQlyd8D66VIkgFHN9lDQKBgQDWezgU8QNoRHwwovsl\nSJINGTbEwqsVZQLGc+GaBKGr0GiIns8odUysZXlDkx2eiFuNlE/R4pOM7mH0iWtp\niu97225He+tT4Xff+XeHvRhlf+WWSpBMSHV9N4vDM2cDFXzozRh+3pTaorHYLZWB\nP7r7aLnBE497NFyc14mZYaEQDQKBgQDWI8L2bms6PkfWgd8ANEfOuj/pUvJwoXFp\noOToTocgOtLYCzXO+gWeIuiVehmBBh2PRWZfAOw4Iobyv45YFQzYQPGsC8G3M9LN\n3rvgVQ9jmYQ9M7wdstfCDnRkmY33GxbFAxEQYZs4HYruxukLMShI9b/aPFagIfl6\nx/iwyq07BwKBgFf4Mghk0gDyFf3c2yVvnnfA37XUIlekFn9PCDkjrSvLTxS6Dj2J\n3ujWteYBcSSUyPhI3HQ5ektTetnRgzzGv3MNjS3EpcDBuWkj6OLDrD31NzVtX8Hp\n9kZlge2OJ7IcHh9d/64JnQQPtuHz0F4yxX5Ydde7Lh5aW6H4xXcjk+wBAoGAank5\nlWJtunYBLi1A/k8AbU+6O39cwJflVkoDx2ZUVbgp4fYg+Rrj9C8TSk99ouOxiu1M\n62wACCFSzBxm4HEHA/e2sn7eAQOpi2d2LyLcFf/c+rlgjbvA/+JECUk4h2dWuPq/\nX0/I5+v4iqUodsIob66RiCd8Qv7hlyUbCHyeCb0CgYEA0q7Fl12+FvWsoZenvbYm\np/AmhRq86khxiuWWb3fu81Mk1XiYWnoSJEy6VmNpIghTA9uv4WmMYtNWHEjODu+X\nAbodqfbOkCRjrH6hHu4Nk33mAdMQgVHvPF+2ie2RYZKUHMM3W6LgACZuggweGD1W\n8fwpoUmlnWZc+xYjFeJgPfE=\n-----END PRIVATE KEY-----\n",
+  "client_email": "deliveryapp@fastappdeliveryproject.iam.gserviceaccount.com",
+  "client_id": "115530220097240092031",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/deliveryapp%40fastappdeliveryproject.iam.gserviceaccount.com"
+}
