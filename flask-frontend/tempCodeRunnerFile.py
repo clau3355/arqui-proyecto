@@ -1,1 +1,0 @@
-login("shaki@gmail.com", "rabiosa")
