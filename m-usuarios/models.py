@@ -1,6 +1,7 @@
 import os
 from google.cloud import bigquery
 from datetime import date
+import requests
 #from kms import encriptar, desencriptar
 
 
@@ -9,7 +10,7 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'fastappdeliveryproject-4a512d204
 client = bigquery.Client()
 
 class User:
-    def __init__(self,username,password,mail,id_user,ubicacion,money, id_sala):
+    def __init__(self,username,password,mail,id_user,ubicacion,money, id_sala, has_pedidos, pedidos):
         self.id_user = id_user
         self.mail = mail
         self.username = username
@@ -17,6 +18,8 @@ class User:
         self.ubicacion = ubicacion
         self.money = money
         self.id_sala = id_sala
+        self.has_pedidos = has_pedidos
+        self.pedidos = pedidos
 
     def __repr__(self):
         return f'<User:{self.username}>'
@@ -26,7 +29,11 @@ def ObtenerUsuarios():
     query_job = client.query('select * from fastappdeliveryproject.Datos_no_relacionales.tabla_test')
 
     for row in query_job.result():
-        users.append(User(username=row["username"], ubicacion=row["ubicacion"], money=row["money"], password=row["pass"],id_user=row["id_user"], mail=row["correo"], id_sala=row["id_sala"]))
+        users.append(User(username=row["username"], 
+        ubicacion=row["ubicacion"], money=row["money"], 
+        password=row["pass"],id_user=row["id_user"], 
+        mail=row["correo"], id_sala=row["id_sala"],
+        has_pedidos=row["Has_pedido"], pedidos=row["Pedidos"]))
     return users
 
 def CambiarUbicacion(a,b):
@@ -47,7 +54,7 @@ def BuscarUsuarioxId(a):
     resultado = False
     for i in users:
         if i.id_user == a:
-            resultado = i
+            resultado = GetUsuario(i)
     return resultado
            
 
@@ -65,12 +72,12 @@ def AñadirUser(a,b,c,ubi):
     # Creating a list of tuples with the values that shall be inserted into the table
     id = GetLastId()
     #contra = encriptar(b)
-    rows_to_insert = [(id,b,"100",ubi,fecha,a,c,None)]
+    rows_to_insert = [(id,b,"100",ubi,fecha,a,c,None,False,None)]
     errors = client.insert_rows(table, rows_to_insert) 
     print(errors)
 
 def GetUsuario(i):
-    return  {'id': i.id_user, 'username': i.username, 'password': i.password, 'ubicacion': i.ubicacion, 'dinero' : i.money, 'id_sala': i.id_sala}
+    return  {'id': i.id_user, 'username': i.username, 'password': i.password, 'ubicacion': i.ubicacion, 'dinero' : i.money, 'id_sala': i.id_sala, 'has_pedidos':i.has_pedidos, 'pedidos':i.pedidos}
 
 def ValidarUsername(a,b):
     resultado = False
@@ -86,4 +93,3 @@ def ValidarUsername(a,b):
                 resultado =  GetUsuario(i)
 
     return resultado
-       

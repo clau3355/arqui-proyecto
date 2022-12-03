@@ -36,12 +36,18 @@ def signup_post():
         AñadirUser(name,password,email,ubicacion)
         return "usuario añadido"
     else:
-        return 'El usuario ya existe'
+        return 'el registro no fue posible'
 
-
-app.config['SECRET_KEY'] = 'secret-key-goes-here'
-app.config['SESSION_TYPE'] = 'filesystem'
-
+@app.route('/id_search')
+def id_search():
+    id = request.args.get('id')
+    resultado = BuscarUsuarioxId(id)
+    
+    if resultado!=True:
+        json_string = json.dumps(BuscarUsuarioxId(id))
+        return json_string 
+    else:
+        return 'False'
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('port', 8080)))
