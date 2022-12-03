@@ -1,14 +1,25 @@
-from flask import render_template, Flask, request
+from flask import render_template, Flask, request, redirect, url_for,session, g
 import os
 app = Flask(__name__)
 
+usuario = []
 
 @app.route('/')
 def main():
      return render_template('main.html')
 
+@app.before_request
+def before_request():
+    g.user = None 
+    if 'id_user' in session:
+        user = usuario #BuscarUsuarioxId(session['id_user'])
+        g.user = user
+
 @app.route('/index')
 def index():
+     if not g.user:
+        return redirect("login")
+        
      var1 = "Lucas"
      var2 = "984999965"
      var3 = "Av. los tulipanes A-18"
@@ -16,19 +27,41 @@ def index():
      return render_template('index.html', variable1 = var1, variable2 =var2, variable3 = var3 )
 
 @app.route('/login')
+def login_post():
+    session.pop('id_user',None)
+    email = request.form.get('email')
+    name = request.form.get('username')
+    password = request.form.get('password')
+
+    resultado = True
+    #print(resultado)
+
+    if resultado!= False:
+        session['id_user'] = resultado
+        return redirect("index")
+    else:
+        return redirect("login")
+
+@app.route('/login', methods=["POST"])
 def login():
      return render_template('login.html')
 
 @app.route('/logout')
 def logout():
-     return "logout"
+     session.pop('id_user', None)
+     g.user = None
+     return redirect('/')
 
 @app.route('/tiendas')
 def tiendas():
+     if not g.user:
+        return redirect("login")
      return render_template('tiendas.html')
 
 @app.route('/pedido')
 def pedido():
+     if not g.user:
+        return redirect("login")
      return render_template('pedido.html')
 
 @app.route('/registro')
@@ -37,6 +70,8 @@ def registro():
 
 @app.route('/mapas')
 def mapas():
+     if not g.user:
+        return redirect("login")
      var1 = "Lima"
      var2 = "Callao"
 

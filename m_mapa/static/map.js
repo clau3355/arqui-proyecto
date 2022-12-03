@@ -41,7 +41,7 @@ function CalcularRuta(){
           else{
                directionDisplay.setDirections({routes:{}});    
                map.setCenter(lima_coordinates);      
-               output.innerHTML = "<div> no se pudo :( </div>";
+               output.innerHTML = "<div> No fue posible calcular la ruta </div>";
 
           }
      })

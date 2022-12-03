@@ -1,51 +1,43 @@
-from flask import Blueprint, render_template, Flask, request, redirect, url_for,session, g, abort
+from flask import Blueprint, render_template, Flask, request
 from models import AñadirUser, BuscarUsuarioxCorreo, ValidarUsername, BuscarUsuarioxId, CambiarUbicacion
 import os
-app = Flask(__name__, static_url_path='')
+import json
+app = Flask(__name__)
 
-
-@app.before_request
-def before_request():
-    g.user = None 
-    if 'id_user' in session:
-        user = BuscarUsuarioxId(session['id_user'])
-        g.user = user
+@app.route('/ubicacion')
+def cambiar_ubicacion():
+    ubicacion = request.args.get('ubi')
+    userid = request.args.get('id')
+    CambiarUbicacion(userid, ubicacion)
+    return "Se cambió la ubicación con éxito"
         
 @app.route('/login')
 def login_post():
-    session.pop('id_user',None)
     email = request.args.get('email')
     name = request.args.get('name')
     password = request.args.get('password')
     resultado = ValidarUsername(name,password)
-    #print(resultado)
-
     if resultado!= False:
-        session['id_user'] = resultado
-        return 'conectado'
+        json_string = json.dumps(ValidarUsername(name,password))
+        return json_string
     else:
-        return 'no se pudo iniciar sesión'
+        return 'No se encontró el usuario'
 
 @app.route('/signup')
 def signup_post():
     email = request.args.get('email')
     name = request.args.get('name')
     password = request.args.get('password')
+    ubicacion = request.args.get('ubi')
 
     resultado = BuscarUsuarioxCorreo(email)
     
     if resultado!=True:
-        AñadirUser(name,password,email)
-        return ("Usuario " + name + " registrado")
+        AñadirUser(name,password,email,ubicacion)
+        return "usuario añadido"
     else:
-        return ("no se pudo registrar")
-    
+        return 'El usuario ya existe'
 
-@app.route('/logout')
-def logout():
-    session.pop('id_user', None)
-    g.user = None
-    return "se ha cerrado la sesion"
 
 app.config['SECRET_KEY'] = 'secret-key-goes-here'
 app.config['SESSION_TYPE'] = 'filesystem'

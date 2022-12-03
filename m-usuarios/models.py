@@ -19,7 +19,7 @@ class User:
         self.id_sala = id_sala
 
     def __repr__(self):
-        return f'<User: {self.username}>'
+        return f'<User:{self.username}>'
 
 def ObtenerUsuarios():
     users = []
@@ -38,24 +38,25 @@ def BuscarUsuarioxCorreo(a):
     users = ObtenerUsuarios()
     resultado = False
     for i in users:
-        print(i.mail)
-        print (a)
-        if i.mail == a:      
+        if i.mail == a:   
             resultado = True
     return resultado
         
 def BuscarUsuarioxId(a):
     users = ObtenerUsuarios()
+    resultado = False
     for i in users:
         if i.id_user == a:
-            return i
+            resultado = i
+    return resultado
+           
 
 def GetLastId():
     users = ObtenerUsuarios()
     resultado = len(users) + 1
     return resultado
 
-def AñadirUser(a,b,c):
+def AñadirUser(a,b,c,ubi):
    # For this sample, the table must already exist and have a defined 
     schematable_id = 'test_table_creation'
     fecha = date.today()
@@ -64,17 +65,25 @@ def AñadirUser(a,b,c):
     # Creating a list of tuples with the values that shall be inserted into the table
     id = GetLastId()
     contra = encriptar(b)
-    rows_to_insert = [(id,contra,"100",None,fecha,a,c,None)]
+    rows_to_insert = [(id,contra,"100",ubi,fecha,a,c,None)]
     errors = client.insert_rows(table, rows_to_insert) 
     print(errors)
 
+def GetUsuario(i):
+    return  {'id': i.id_user, 'username': i.username, 'password': i.password, 'ubicacion': i.ubicacion, 'dinero' : i.money, 'id_sala': i.id_sala}
+
 def ValidarUsername(a,b):
+    resultado = False
     users = ObtenerUsuarios()
+
     for i in users:
-        contra = desencriptar(i.password)
+        contra = i.password
+        #contra2 = desencriptar(contra)
         if i.username == a:
             print("se encontró el usuario")
             if contra == b:
                 print("la contraseña es correcta")
-                return i.id_user
+                resultado =  GetUsuario(i)
 
+    return resultado
+       
