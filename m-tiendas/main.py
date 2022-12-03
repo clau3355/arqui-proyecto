@@ -17,7 +17,7 @@ def ObtenerTiendas():
         'select * from fastappdeliveryproject.Datos_no_relacionales.tabla_tienda')
 
     for row in query_job.result():
-        tiendas.append({"id_tienda": row["id_tienda"], "nombre": row["nombre"], "direccion": row["direccion"]})
+        tiendas.append({"id_tienda": row["id_tienda"], "nombre": row["nombre"], "direccion": row["direccion"],"productos": row["productos"]})
     print (tiendas)
     return tiendas
 
