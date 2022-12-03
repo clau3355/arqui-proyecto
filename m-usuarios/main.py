@@ -14,7 +14,6 @@ def cambiar_ubicacion():
 @app.route('/login')
 def login_post():
     email = request.args.get('email')
-    #name = request.args.get('name')
     password = request.args.get('password')
     resultado = ValidarUsername(email,password)
     if resultado!= False:

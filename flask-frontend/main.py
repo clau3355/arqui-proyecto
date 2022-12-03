@@ -82,6 +82,7 @@ def registro_post():
      flash(respuesta)
      return render_template('registro.html')
 
+#.. 
 
 @app.route('/mapas')
 def mapas():
